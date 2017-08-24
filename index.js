@@ -3,6 +3,8 @@ var express = require('express'),
     logger = require('morgan'),
     path = require('path'),
     bodyParser = require('body-parser'),
+    helmet = require('helmet'),
+    contact = require('contact'),
     http = require('http');
 
 var app = express();
@@ -12,7 +14,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-var contact = require('./contact');
+app.use(helmet());
 app.use('/api/contact', contact);
 
 var port = normalizePort(process.env.PORT || '3001');
