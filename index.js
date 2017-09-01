@@ -4,7 +4,7 @@ var express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
     helmet = require('helmet'),
-    contact = require('contact'),
+    contact = require('./contact'),
     http = require('http');
 
 var app = express();
